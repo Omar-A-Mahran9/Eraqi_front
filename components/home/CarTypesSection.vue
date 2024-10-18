@@ -85,7 +85,7 @@
 
                                         <v-img
                                             class="bg-white"
-                                            :src="`/assets/img/index/${car.img}`"
+                                            :src="`_nuxt/assets/img/index/${car.img}`"
                                             cover
                                         ></v-img>
 
