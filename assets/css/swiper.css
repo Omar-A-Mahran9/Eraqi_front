@@ -1,0 +1,54 @@
+:root {
+    --swiper-pagination-color: #bba664;
+    --swiper-pagination-left: auto;
+    --swiper-pagination-right: 8px;
+    --swiper-pagination-bottom: 2px;
+    --swiper-pagination-top: auto;
+    --swiper-pagination-fraction-color: inherit;
+    --swiper-pagination-progressbar-bg-color: rgba(0, 0, 0, 0.25);
+    --swiper-pagination-progressbar-size: 4px;
+    --swiper-pagination-bullet-size: 8px;
+    --swiper-pagination-bullet-width: 18px;
+    --swiper-pagination-bullet-height: 18px;
+    --swiper-pagination-bullet-inactive-color: #000;
+    --swiper-pagination-bullet-inactive-opacity: 0.2;
+    --swiper-pagination-bullet-opacity: 1;
+    --swiper-pagination-bullet-horizontal-gap: 4px;
+    --swiper-pagination-bullet-vertical-gap: 6px;
+    /* Navigation */
+    --swiper-navigation-size: 10px;
+    --swiper-navigation-top-offset: 10%;
+    --swiper-navigation-sides-offset: 10px;
+    --swiper-navigation-color: var(--swiper-theme-color);
+}
+
+.custom-swiper-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.custom-swiper-navigation button {
+    background-color: #bba664;
+    color: #ffffff;
+    border: none;
+    padding: 30px 30px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 1px 1px 10px #d6d6d6; /* or #000000 */
+}
+.custom-swiper-navigation::after {
+    font-size: 10px !important;
+}
+.custom-swiper-navigation button:hover {
+    background-color: #bba664;
+    color: #ffffff;
+}
+.swiper-button-disabled {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    opacity: 1;
+}
