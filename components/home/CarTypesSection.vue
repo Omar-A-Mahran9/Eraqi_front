@@ -85,7 +85,7 @@
 
                                         <v-img
                                             class="bg-white"
-                                            :src="`_nuxt/assets/img/index/${car.img}`"
+                                            :src="car.img"
                                             cover
                                         ></v-img>
 
@@ -120,28 +120,28 @@ const onSwiper = (swiper) => {
 
 const cars = [
     {
-        img: "car1.svg",
+        img: "img/index/car1.svg",
         title: {
             ar: "فورد تورس 2024",
             en: "Ford Taurus 2024",
         },
     },
     {
-        img: "car2.svg",
+        img: "img/index/car2.svg",
         title: {
             ar: "كامري",
             en: "Camry",
         },
     },
     {
-        img: "car1.svg",
+        img: "img/index/car1.svg",
         title: {
             ar: "فورد تورس 2024",
             en: "Ford Taurus 2024",
         },
     },
     {
-        img: "car3.svg",
+        img: "img/index/car3.svg",
         title: {
             ar: "لكزس ES",
             en: "Lexus ES",

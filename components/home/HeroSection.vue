@@ -186,7 +186,7 @@
                                         {{ $t(cat.cars.title[locale]) }}
                                       </p>
                                       <img
-                                        :src="`~/assets/img/index/${cat.cars.img}`"
+                                        :src="`/img/index/${cat.cars.img}`"
                                         alt=""
                                         width="100"
                                       />
@@ -362,7 +362,7 @@
                                         {{ $t(cat.cars.title[locale]) }}
                                       </p>
                                       <img
-                                        :src="`~/assets/img/index/${cat.cars.img}`"
+                                        :src="`/img/index/${cat.cars.img}`"
                                         alt=""
                                         width="100"
                                       />
@@ -446,7 +446,7 @@
                               <v-card class="mx-auto" width="290">
                                 <v-img
                                   height="100px"
-                                  :src="`~/assets/img/index/${cat.cars.img}`"
+                                  :src="`/img/index/${cat.cars.img}`"
                                   alt=""
                                 ></v-img>
                                 <p class="text-center font-bold">
@@ -1415,7 +1415,7 @@ const packages = [
     ],
   },
 ];
-import heroImage from "~/assets/img/index/hero.png"; // Import the image
+import heroImage from "/img/index/hero.png"; // Import the image
 
 const images = [
   {

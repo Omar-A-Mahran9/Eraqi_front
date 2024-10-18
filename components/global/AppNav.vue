@@ -10,7 +10,7 @@
                     <div v-if="locale === 'ar'" class="d-flex">
                         <img
                             class="h-5 w-auto"
-                            src="~/assets/img/header/logo.svg"
+                            src="/img/header/logo.svg"
                             alt="Company logo"
                         />
                     </div>
@@ -85,7 +85,7 @@
                                         >
                                             <img
                                                 class="h-5 w-auto"
-                                                src="~/assets/img/header/saudi_icon.svg"
+                                                src="/img/header/saudi_icon.svg"
                                             />
                                             <v-icon>mdi-chevron-down</v-icon>
                                         </div>
@@ -93,7 +93,7 @@
                                             <v-icon>mdi-chevron-down</v-icon>
                                             <img
                                                 class="h-5 w-auto"
-                                                src="~/assets/img/header/american_icon.svg"
+                                                src="/img/header/american_icon.svg"
                                             />
                                         </div>
 
@@ -148,7 +148,7 @@
                         <div v-if="locale === 'ar'" class="d-flex">
                             <img
                                 class="h-5 w-auto"
-                                src="~/assets/img/header/logo.svg"
+                                src="/img/header/logo.svg"
                                 alt="Company logo"
                             />
                         </div>
@@ -227,7 +227,7 @@
                                                     >
                                                         <img
                                                             class="h-5 w-auto"
-                                                            src="~/assets/img/header/saudi_icon.svg"
+                                                            src="/img/header/saudi_icon.svg"
                                                         />
                                                         <v-icon
                                                             >mdi-chevron-down</v-icon
@@ -239,7 +239,7 @@
                                                         >
                                                         <img
                                                             class="h-5 w-auto"
-                                                            src="~/assets/img/header/american_icon.svg"
+                                                            src="/img/header/american_icon.svg"
                                                         />
                                                     </div>
 

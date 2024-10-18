@@ -10,6 +10,7 @@
         </div>
         <div>
             <swiper
+                :dir="swiperDirection"
                 :initial-slide="Math.floor(ratings.length / 2)"
                 :breakpoints="{
                     640: {
@@ -47,7 +48,7 @@
                                 <v-card-title>
                                     <div class="flex align-center gap-4">
                                         <img
-                                            :src="`~/assets/img/index/${rate.person.img}`"
+                                            :src="rate.person.img"
                                             alt=""
                                         />
                                         <span>{{
@@ -75,7 +76,7 @@
                             </v-card-text>
                             <div class="iconQ">
                                 <img
-                                    src="~/assets/img/index/Question.svg"
+                                    src="/img/index/Question.svg"
                                     alt=""
                                 />
                             </div>
@@ -118,7 +119,10 @@ const { t, locale } = useI18n();
 const onSwiper = (swiper) => {
     console.log(swiper);
 };
-
+const swiperDirection = ref(locale.value === 'ar' ? 'rtl' : 'ltr');
+watch(()=>locale.value, (newLocale) => {
+  swiperDirection.value = newLocale === 'ar' ? 'rtl' : 'ltr'
+})
 const ratings = [
     {
         person: {
@@ -126,7 +130,7 @@ const ratings = [
                 ar: "احمد محمد", // Arabic name
                 en: "John Doe", // English name
             },
-            img: "person1.svg",
+            img: "/img/index/person1.svg",
             title: {
                 ar: "هنساعدك خطوه بخطوه من البدايه للنهاية، من قبل خبراء لمساعدتك على الوصول للقمه",
                 en: "We'll help you step by step from start to finish, guided by experts to help you reach the top.", // English translation
@@ -140,7 +144,7 @@ const ratings = [
                 ar: "احمد محمد", // Arabic name
                 en: "John Doe", // English name
             },
-            img: "person1.svg",
+            img: "/img/index/person1.svg",
             title: {
                 ar: "هنساعدك خطوه بخطوه من البدايه للنهاية، من قبل خبراء لمساعدتك على الوصول للقمه",
                 en: "We'll help you step by step from start to finish, guided by experts to help you reach the top.", // English translation
@@ -154,7 +158,7 @@ const ratings = [
                 ar: "احمد محمد", // Arabic name
                 en: "John Doe", // English name
             },
-            img: "person1.svg",
+            img: "/img/index/person1.svg",
             title: {
                 ar: "هنساعدك خطوه بخطوه من البدايه للنهاية، من قبل خبراء لمساعدتك على الوصول للقمه",
                 en: "We'll help you step by step from start to finish, guided by experts to help you reach the top.", // English translation
@@ -168,7 +172,7 @@ const ratings = [
                 ar: "احمد محمد", // Arabic name
                 en: "John Doe", // English name
             },
-            img: "person1.svg",
+            img: "/img/index/person1.svg",
             title: {
                 ar: "هنساعدك خطوه بخطوه من البدايه للنهاية، من قبل خبراء لمساعدتك على الوصول للقمه",
                 en: "We'll help you step by step from start to finish, guided by experts to help you reach the top.", // English translation

@@ -9,7 +9,7 @@
                             <div v-if="locale === 'ar'" class="d-flex">
                                 <img
                                     class="h-5 w-auto"
-                                    src="~/assets/img/header/logo.svg"
+                                    src="/img/header/logo.svg"
                                     alt="Company logo"
                                 />
                             </div>
@@ -26,7 +26,7 @@
                     <v-row align="center">
                         <v-col cols="3">
                             <img
-                                src="~/assets/img/footer/homeicon.svg"
+                                src="/img/footer/homeicon.svg"
                                 class="img-fluid rounded-top"
                                 alt=""
                             />
@@ -43,7 +43,7 @@
                     <v-row align="center">
                         <v-col cols="3">
                             <img
-                                src="~/assets/img/footer/phone.svg"
+                                src="/img/footer/phone.svg"
                                 class="img-fluid rounded-top"
                                 alt=""
                             />
@@ -60,7 +60,7 @@
                     <v-row align="center">
                         <v-col cols="3">
                             <img
-                                src="~/assets/img/footer/email.svg"
+                                src="/img/footer/email.svg"
                                 class="img-fluid rounded-top"
                                 alt=""
                             />
@@ -295,7 +295,7 @@
                         <v-row align="center">
                             <v-col cols="2">
                                 <img
-                                    src="~/assets/img/footer/Facebook.svg"
+                                    src="/img/footer/Facebook.svg"
                                     class="img-fluid rounded-top"
                                     alt=""
                                 />
@@ -309,7 +309,7 @@
                         <v-row align="center">
                             <v-col cols="2">
                                 <img
-                                    src="~/assets/img/footer/TWITER.svg"
+                                    src="/img/footer/TWITER.svg"
                                     class="img-fluid rounded-top"
                                     alt=""
                                 />
@@ -323,7 +323,7 @@
                         <v-row align="center">
                             <v-col cols="2">
                                 <img
-                                    src="~/assets/img/footer/inst.svg"
+                                    src="/img/footer/inst.svg"
                                     class="img-fluid rounded-top"
                                     alt=""
                                 />
@@ -337,7 +337,7 @@
                         <v-row align="center">
                             <v-col cols="2">
                                 <img
-                                    src="~/assets/img/footer/whats.svg"
+                                    src="/img/footer/whats.svg"
                                     class="img-fluid rounded-top"
                                     alt=""
                                 />
@@ -382,7 +382,7 @@
                             >
                                 <img
                                     class="mt-5"
-                                    :src="`~/assets/img/footer/${bank.logo}`"
+                                    :src="bank.logo"
                                     alt="Bank logo"
                                 />
                             </div>
@@ -393,7 +393,7 @@
 
             <div style="width: 10%; margin: auto; margin-top: 40px">
                 <img
-                    :src="`~/assets/img/footer/bank8.svg`"
+                    :src="`/img/footer/bank8.svg`"
                     alt="Bank logo"
                     style="margin: auto"
                 />
@@ -436,13 +436,13 @@ const getAddress = () => {
     return footer.address[locale.value] || footer.address["en"]; // Default to English if locale is not found
 };
 const banks = [
-    { name: "BNI", logo: "bank1.svg" },
-    { name: "BNI", logo: "bank2.svg" },
-    { name: "BNI", logo: "bank3.svg" },
-    { name: "BNI", logo: "bank4.svg" },
-    { name: "BNI", logo: "bank5.svg" },
-    { name: "BNI", logo: "bank6.svg" },
-    { name: "BNI", logo: "bank7.svg" },
+    { name: "BNI", logo: "/img/footer/bank1.svg" },
+    { name: "BNI", logo: "/img/footer/bank2.svg" },
+    { name: "BNI", logo: "/img/footer/bank3.svg" },
+    { name: "BNI", logo: "/img/footer/bank4.svg" },
+    { name: "BNI", logo: "/img/footer/bank5.svg" },
+    { name: "BNI", logo: "/img/footer/bank6.svg" },
+    { name: "BNI", logo: "/img/footer/bank7.svg" },
 ];
 // Function to return the correct address based on the locale
 

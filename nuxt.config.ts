@@ -27,14 +27,15 @@ export default defineNuxtConfig({
     "@nuxtjs/i18n",
   ],
 
-  vite: {
-    vue: {
-      template: {
-        transformAssetUrls,
-      },
-    },
-  },
+  // vite: {
+  //   vue: {
+  //     template: {
+  //       transformAssetUrls,
+  //     },
+  //   },
+  // },
 
+  // Remove compatibilityDate, as it's not a valid config option
   postcss: {
     plugins: {
       tailwindcss: {},
@@ -42,5 +43,5 @@ export default defineNuxtConfig({
     },
   },
 
-  // Remove compatibilityDate, as it's not a valid config option
+  compatibilityDate: "2024-10-18"
 });

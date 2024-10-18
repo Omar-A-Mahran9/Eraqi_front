@@ -45,10 +45,10 @@
 
 <script setup>
 const { locale, setLocale } = useI18n();
-import ico from "~/assets/img/index/whyus3.svg";
+import ico from "/img/index/whyus3.svg";
 const whyuscontents = [
   {
-    icon: "whyus1.svg",
+    icon: "/img/index/whyus1.svg",
     title: {
       ar: "لا يوجد تكاليف اضافية",
       en: "No Additional Costs",
@@ -59,7 +59,7 @@ const whyuscontents = [
     },
   },
   {
-    icon: "whyus2.svg",
+    icon: "/img/index/whyus2.svg",
     title: {
       ar: "التزام بالمواعيد",
       en: "Punctuality",
@@ -81,7 +81,7 @@ const whyuscontents = [
     },
   },
   {
-    icon: "whyus4.svg",
+    icon: "/img/index/whyus4.svg",
     title: {
       ar: "الغاء مجانى",
       en: "Free Cancellation",

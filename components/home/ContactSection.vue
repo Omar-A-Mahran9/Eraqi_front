@@ -18,7 +18,7 @@
                     <v-row align="center" class="mb-6">
                         <v-col cols="2">
                             <img
-                                src="~/assets/img/footer/homeicon.svg"
+                                src="/img/footer/homeicon.svg"
                                 class="img-fluid rounded-top"
                                 alt=""
                             />
@@ -35,7 +35,7 @@
                     <v-row align="center" class="mb-6">
                         <v-col cols="2">
                             <img
-                                src="~/assets/img/footer/phone.svg"
+                                src="/img/footer/phone.svg"
                                 class="img-fluid rounded-top"
                                 alt=""
                             />
@@ -50,7 +50,7 @@
                     <v-row align="center">
                         <v-col cols="2">
                             <img
-                                src="~/assets/img/footer/email.svg"
+                                src="/img/footer/email.svg"
                                 class="img-fluid rounded-top"
                                 alt=""
                             />
