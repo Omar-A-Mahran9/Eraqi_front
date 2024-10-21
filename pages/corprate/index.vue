@@ -1,0 +1,4 @@
+<template>
+  <CorprateHeroSection />
+  <CorprateJoinUs />
+</template>

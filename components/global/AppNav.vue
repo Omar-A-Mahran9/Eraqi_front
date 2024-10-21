@@ -16,7 +16,7 @@
                     </div>
                     <div v-else>
                         <h1 class="text-main font-bold" style="font-size: 190%">
-                            El Raqi
+                            Al Raqi
                         </h1>
                     </div>
                 </nuxt-link>
@@ -157,7 +157,7 @@
                                 class="text-main font-bold"
                                 style="font-size: 190%"
                             >
-                                El Raqi
+                                Al Raqi
                             </h1>
                         </div>
                     </nuxt-link>

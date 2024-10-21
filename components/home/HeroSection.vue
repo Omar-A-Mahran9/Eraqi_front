@@ -3,7 +3,7 @@
     <v-carousel-item
       v-for="(image, index) in images"
       :key="index"
-      :src="image.src"
+      :src="`${image.src}`"
       cover
     >
       <div class="relative w-full h-full">
@@ -21,7 +21,7 @@
             </p>
           </div>
           <div>
-            <v-tabs v-model="tab" class="text-white">
+            <v-tabs v-model="tab" class="text-white" color="#bca664">
               <div
                 :style="{
                   backgroundColor: 'rgba(200, 200, 200, 0.2)',
@@ -33,7 +33,7 @@
                   v-for="(tabItem, tabIndex) in tabs"
                   :key="tabIndex"
                   :value="tabItem.value"
-                  class="no-style-tab text-none"
+                  class="no-style-tab text-none custom-tab"
                 >
                   <div class="d-flex align-center gap-2 align-center">
                     <span v-html="tabItem.icon"></span>
@@ -47,7 +47,7 @@
                     >
                       <template v-slot:activator="{ props }">
                         <div icon v-bind="props">
-                          <v-icon class="text-main" icon="mdi-help-circle" />
+                          <v-icon icon="mdi-help-circle" />
                         </div>
                       </template>
                       <span>{{ tabItem.hint[locale] }}</span>
@@ -82,14 +82,7 @@
                           <v-select
                             :label="$t('From')"
                             density="compact"
-                            :items="[
-                              'California',
-                              'Colorado',
-                              'Florida',
-                              'Georgia',
-                              'Texas',
-                              'Wyoming',
-                            ]"
+                            :items="[]"
                           ></v-select>
                         </v-col>
 
@@ -97,14 +90,7 @@
                           <v-select
                             :label="$t('To')"
                             density="compact"
-                            :items="[
-                              'California',
-                              'Colorado',
-                              'Florida',
-                              'Georgia',
-                              'Texas',
-                              'Wyoming',
-                            ]"
+                            :items="[]"
                           ></v-select>
                         </v-col>
 
@@ -112,42 +98,21 @@
                           <v-select
                             :label="$t('Booking Date')"
                             density="compact"
-                            :items="[
-                              'California',
-                              'Colorado',
-                              'Florida',
-                              'Georgia',
-                              'Texas',
-                              'Wyoming',
-                            ]"
+                            :items="[]"
                           ></v-select>
                         </v-col>
                         <v-col cols="12" md="2">
                           <v-select
                             :label="$t('Time')"
                             density="compact"
-                            :items="[
-                              'California',
-                              'Colorado',
-                              'Florida',
-                              'Georgia',
-                              'Texas',
-                              'Wyoming',
-                            ]"
+                            :items="[]"
                           ></v-select>
                         </v-col>
                         <v-col cols="12" md="2">
                           <v-select
                             :label="$t('Passengers')"
                             density="compact"
-                            :items="[
-                              'California',
-                              'Colorado',
-                              'Florida',
-                              'Georgia',
-                              'Texas',
-                              'Wyoming',
-                            ]"
+                            :items="[]"
                           ></v-select>
                         </v-col>
 
@@ -258,14 +223,7 @@
                           <v-select
                             :label="$t('From')"
                             density="compact"
-                            :items="[
-                              'California',
-                              'Colorado',
-                              'Florida',
-                              'Georgia',
-                              'Texas',
-                              'Wyoming',
-                            ]"
+                            :items="[]"
                           ></v-select>
                         </v-col>
 
@@ -273,14 +231,7 @@
                           <v-select
                             :label="$t('To')"
                             density="compact"
-                            :items="[
-                              'California',
-                              'Colorado',
-                              'Florida',
-                              'Georgia',
-                              'Texas',
-                              'Wyoming',
-                            ]"
+                            :items="[]"
                           ></v-select>
                         </v-col>
 
@@ -288,42 +239,21 @@
                           <v-select
                             :label="$t('Booking Date')"
                             density="compact"
-                            :items="[
-                              'California',
-                              'Colorado',
-                              'Florida',
-                              'Georgia',
-                              'Texas',
-                              'Wyoming',
-                            ]"
+                            :items="[]"
                           ></v-select>
                         </v-col>
                         <v-col cols="12" md="2">
                           <v-select
                             :label="$t('Time')"
                             density="compact"
-                            :items="[
-                              'California',
-                              'Colorado',
-                              'Florida',
-                              'Georgia',
-                              'Texas',
-                              'Wyoming',
-                            ]"
+                            :items="[]"
                           ></v-select>
                         </v-col>
                         <v-col cols="12" md="2">
                           <v-select
                             :label="$t('Passengers')"
                             density="compact"
-                            :items="[
-                              'California',
-                              'Colorado',
-                              'Florida',
-                              'Georgia',
-                              'Texas',
-                              'Wyoming',
-                            ]"
+                            :items="[]"
                           ></v-select>
                         </v-col>
 
@@ -1415,7 +1345,6 @@ const packages = [
     ],
   },
 ];
-import heroImage from "/img/index/hero.png"; // Import the image
 
 const images = [
   {
@@ -1423,7 +1352,7 @@ const images = [
       ar: "احصل ع وسيله مواصلاتك بكبسه زر وبدقائق معدوده احجز الان وادفع عند وصولك او عبر البطاقه الائتمانيه.",
       en: "Book your transportation with a click and pay upon arrival or via credit card.",
     },
-    src: heroImage, // Just the image filename
+    src: "/img/index/hero.png", // Just the image filename
   },
   // You can add more images here, e.g.:
   // { src: "another-image.png" },
@@ -1438,5 +1367,10 @@ const showArrows = computed(() => images.length > 1);
   color: black; /* Optional: Change text color to black for contrast */
   border: 1px solid #ccc; /* Optional: Add a border */
   border-radius: 4px; /* Optional: Add border radius */
+}
+
+.custom-tab:focus {
+  background-color: #ffffff !important; /* Change background color on focus */
+  color: #bca664 !important; /* Change text color on focus */
 }
 </style>

@@ -63,12 +63,7 @@
                         variant="solo"
                         label="Select"
                         :items="[
-                            'California',
-                            'Colorado',
-                            'Florida',
-                            'Georgia',
-                            'Texas',
-                            'Wyoming',
+                           
                         ]"
                         style="margin-top: -40px"
                     >
