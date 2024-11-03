@@ -344,9 +344,8 @@
                 style="
                   display: block;
                   margin: auto;
-                  width: 20%;
-                  margin-inline-end: 40px;
-                "
+                  width: 8%;
+                 "
               >
                 <img class="mt-5" :src="bank.logo" alt="Bank logo" />
               </div>
@@ -355,7 +354,7 @@
         </v-slide-group>
       </v-sheet>
 
-      <div style="width: 10%; margin: auto; margin-top: 40px">
+      <div style="width: 15%; margin: auto; margin-top: 40px">
         <img
           :src="`/img/footer/bank8.svg`"
           alt="Bank logo"

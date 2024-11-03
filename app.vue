@@ -11,7 +11,7 @@
         class="whatsapp-link"
       >
         <DotLottieVue
-          style="height: 80px; width: 80px"
+          style="height: 50px; width: 50px"
           autoplay
           loop
           src="https://lottie.host/f1de0179-62d7-4b79-be5c-6288da36470b/7his0dZkN5.json"
@@ -22,9 +22,13 @@
       <div v-if="showWelcomeMessage" class="welcome-message mb-5">
         <span>{{
           $t(
-            "Hello there! To inquire about our prices and to make a reservation, please contact us via WhatsApp. The website is under construction."
+            "Hello there! To inquire about our prices and to make a reservation, please contact us via WhatsApp."
           )
         }}</span>
+
+        <p class="text-center mt-2 font-bold">
+          (( {{ $t("The website is under construction.") }} .{{ " " }} ))
+        </p>
 
         <button @click="closeWelcomeMessage" class="close-btn">
           <i class="fa-times">x</i>
@@ -93,13 +97,13 @@ const closeWelcomeMessage = () => {
 
 .welcome-message {
   position: fixed;
-  bottom: 95px;
-  inset-inline-start: 50px; /* 'start' based on LTR/RTL */
+  bottom: 70px;
+  inset-inline-start: 35px; /* 'start' based on LTR/RTL */
   background-color: #bba764f6;
   color: white;
   font-weight: bold;
   width: 300px;
-  text-align: justify;
+  /* text-align: justify; */
   font-size: 15px;
   padding: 20px 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);

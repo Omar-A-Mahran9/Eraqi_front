@@ -1,7 +1,7 @@
 {
   "Home": "الرئيسية",
   "Why us": "لماذا تختارنا",
-  "Car types": "أنواع سيارتنا",
+  "Car types": "أنواع سياراتنا",
   "Evaluation": "تقييمات العملاء",
   "Frequently Asked Questions": "الأسئلة الشائعة",
   "Contact us": "التواصل",
@@ -80,9 +80,11 @@
   "Send": "ارسال",
   "Resend otp during": "اعادة ارسال الكود في خلال",
   "second": "ثانية",
-  "Hello there! To inquire about our prices and to make a reservation, please contact us via WhatsApp. The website is under construction.": "يا هلا والله! لمعرفة أسعارنا والحجز يرجى التواصل معنا عبر الواتس الموقع قيد الإنشاء.",
+  "Hello there! To inquire about our prices and to make a reservation, please contact us via WhatsApp.": "يا هلا والله! لمعرفة أسعارنا والحجز يرجى التواصل معنا عبر الواتس .",
+  "The website is under construction.": "الموقع تحت التطوير",
   "Book with us fully package": "احجز معنا باقة كاملة",
   "Join Us": "انضم إلينا",
+  "The work with us is very easy": "العمل معنا سهل جداً",
 
   "New password must be change from past password": "كلمة المرور الجديدة ينبغى ان تختلف عن السابقة",
 
@@ -91,5 +93,5 @@
 
   "Login to your account": "تسجيل الدخول إلى حسابك",
 
-  "": ""
+  "Why we are specialize": "ما الذى يجعلنا متميزين"
 }

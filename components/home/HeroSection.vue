@@ -82,7 +82,27 @@
                           <v-select
                             :label="$t('From')"
                             density="compact"
-                            :items="[]"
+                            :items="[
+                              'الرياض',
+                              'جدة',
+                              'الدمام',
+                              'الخبر',
+                              'مكة المكرمة',
+                              'المدينة المنورة',
+                              'الأحساء',
+                              'تبوك',
+                              'الطائف',
+                              'بريدة',
+                              'القطيف',
+                              'ينبع',
+                              'نجران',
+                              'جازان',
+                              'عرعر',
+                              'سكاكا',
+                              'عنيزة',
+                              'الأسياح',
+                              'المجمعة',
+                            ]"
                           ></v-select>
                         </v-col>
 
@@ -90,7 +110,27 @@
                           <v-select
                             :label="$t('To')"
                             density="compact"
-                            :items="[]"
+                            :items="[
+                              'الرياض',
+                              'جدة',
+                              'الدمام',
+                              'الخبر',
+                              'مكة المكرمة',
+                              'المدينة المنورة',
+                              'الأحساء',
+                              'تبوك',
+                              'الطائف',
+                              'بريدة',
+                              'القطيف',
+                              'ينبع',
+                              'نجران',
+                              'جازان',
+                              'عرعر',
+                              'سكاكا',
+                              'عنيزة',
+                              'الأسياح',
+                              'المجمعة',
+                            ]"
                           ></v-select>
                         </v-col>
 
@@ -98,21 +138,47 @@
                           <v-select
                             :label="$t('Booking Date')"
                             density="compact"
-                            :items="[]"
+                            :items="[
+                              '08:00 AM',
+                              '10:00 AM',
+                              '12:00 PM',
+                              '02:00 PM',
+                              '04:00 PM',
+                            ]"
                           ></v-select>
                         </v-col>
                         <v-col cols="12" md="2">
                           <v-select
                             :label="$t('Time')"
                             density="compact"
-                            :items="[]"
+                            :items="[
+                              'الرياض',
+                              'جدة',
+                              'الدمام',
+                              'الخبر',
+                              'مكة المكرمة',
+                              'المدينة المنورة',
+                              'الأحساء',
+                              'تبوك',
+                              'الطائف',
+                              'بريدة',
+                              'القطيف',
+                              'ينبع',
+                              'نجران',
+                              'جازان',
+                              'عرعر',
+                              'سكاكا',
+                              'عنيزة',
+                              'الأسياح',
+                              'المجمعة',
+                            ]"
                           ></v-select>
                         </v-col>
                         <v-col cols="12" md="2">
                           <v-select
                             :label="$t('Passengers')"
                             density="compact"
-                            :items="[]"
+                            :items="['1', '2', '3', '4', '5+']"
                           ></v-select>
                         </v-col>
 
@@ -223,7 +289,27 @@
                           <v-select
                             :label="$t('From')"
                             density="compact"
-                            :items="[]"
+                            :items="[
+                              'الرياض',
+                              'جدة',
+                              'الدمام',
+                              'الخبر',
+                              'مكة المكرمة',
+                              'المدينة المنورة',
+                              'الأحساء',
+                              'تبوك',
+                              'الطائف',
+                              'بريدة',
+                              'القطيف',
+                              'ينبع',
+                              'نجران',
+                              'جازان',
+                              'عرعر',
+                              'سكاكا',
+                              'عنيزة',
+                              'الأسياح',
+                              'المجمعة',
+                            ]"
                           ></v-select>
                         </v-col>
 
@@ -231,7 +317,27 @@
                           <v-select
                             :label="$t('To')"
                             density="compact"
-                            :items="[]"
+                            :items="[
+                              'الرياض',
+                              'جدة',
+                              'الدمام',
+                              'الخبر',
+                              'مكة المكرمة',
+                              'المدينة المنورة',
+                              'الأحساء',
+                              'تبوك',
+                              'الطائف',
+                              'بريدة',
+                              'القطيف',
+                              'ينبع',
+                              'نجران',
+                              'جازان',
+                              'عرعر',
+                              'سكاكا',
+                              'عنيزة',
+                              'الأسياح',
+                              'المجمعة',
+                            ]"
                           ></v-select>
                         </v-col>
 
@@ -239,21 +345,27 @@
                           <v-select
                             :label="$t('Booking Date')"
                             density="compact"
-                            :items="[]"
+                            :items="['2024-11-01', '2024-11-02', '2024-11-03']"
                           ></v-select>
                         </v-col>
                         <v-col cols="12" md="2">
                           <v-select
                             :label="$t('Time')"
                             density="compact"
-                            :items="[]"
+                            :items="[
+                              '08:00 AM',
+                              '10:00 AM',
+                              '12:00 PM',
+                              '02:00 PM',
+                              '04:00 PM',
+                            ]"
                           ></v-select>
                         </v-col>
                         <v-col cols="12" md="2">
                           <v-select
                             :label="$t('Passengers')"
                             density="compact"
-                            :items="[]"
+                            :items="['1', '2', '3', '4', '5+']"
                           ></v-select>
                         </v-col>
 
@@ -531,15 +643,15 @@ const category = [
         en: "from 250 SAR",
         ar: "من ٢٥٠ ر.س",
       },
-      persons: 14,
+      persons: 4,
       packages: 4,
       imge: "cat1",
     },
   },
   {
     title: {
-      en: "econamic",
-      ar: "اقتصادية",
+      en: "family",
+      ar: "عائلية",
     },
 
     cars: {
@@ -547,101 +659,101 @@ const category = [
 
       title: {
         en: "Camry sonata",
-        ar: "كامري/سوناتا",
+        ar: "جمس يوكن اكس ال 2024",
       },
       price: {
-        en: "from 250 SAR",
-        ar: "من ٢٥٠ ر.س",
+        en: "from 500 SAR",
+        ar: "من ٥٠٠ ر.س",
       },
-      persons: 14,
-      packages: 4,
+      persons: 8,
+      packages: 8,
       imge: "cat2",
     },
   },
   {
     title: {
-      en: "econamic",
-      ar: "اقتصادية",
+      en: "family",
+      ar: "عائلية",
     },
 
     cars: {
       img: "cartype3.svg",
       title: {
         en: "Camry sonata",
-        ar: "كامري/سوناتا",
+        ar: "فان (ستاريا / أتش ون)",
       },
       price: {
-        en: "from 250 SAR",
-        ar: "من ٢٥٠ ر.س",
+        en: "from 400 SAR",
+        ar: "من ٤٠٠ ر.س",
       },
-      persons: 14,
-      packages: 4,
+      persons: 8,
+      packages: 8,
       imge: "",
     },
   },
   {
     title: {
-      en: "econamic",
-      ar: "اقتصادية",
+      en: "VIP",
+      ar: "VIP",
     },
 
     cars: {
       img: "cartype4.svg",
 
       title: {
-        en: "Camry sonata",
-        ar: "كامري/سوناتا",
+        en: "لكزس 2024 es",
+        ar: "لكزس 2024 es",
       },
       price: {
-        en: "from 250 SAR",
-        ar: "من ٢٥٠ ر.س",
+        en: "from 500 SAR",
+        ar: "من ٥٠٠ ر.س",
       },
-      persons: 14,
+      persons: 4,
       packages: 4,
       imge: "",
     },
   },
   {
     title: {
-      en: "econamic",
-      ar: "اقتصادية",
+      en: "VIP",
+      ar: "VIP",
     },
 
     cars: {
       img: "cartype5.svg",
 
       title: {
-        en: "Camry sonata",
+        en: "فورد تورس",
         ar: "كامري/سوناتا",
       },
       price: {
-        en: "from 250 SAR",
-        ar: "من ٢٥٠ ر.س",
+        en: "from 300 SAR",
+        ar: "من ٣٠٠ ر.س",
       },
-      persons: 14,
+      persons: 4,
       packages: 4,
       imge: "",
     },
   },
   {
     title: {
-      en: "econamic",
-      ar: "اقتصادية",
+      en: "Family",
+      ar: "عائلية",
     },
 
     cars: {
       img: "cartype6.svg",
 
       title: {
-        en: "Camry sonata",
-        ar: "كامري/سوناتا",
+        en: "باص هايس",
+        ar: "باص هايس",
       },
       price: {
-        en: "from 250 SAR",
-        ar: "من ٢٥٠ ر.س",
+        en: "from 900 SAR",
+        ar: "من ٩٠٠ ر.س",
       },
-      persons: 14,
-      packages: 4,
+      persons: 30,
+      packages: 30,
       imge: "",
     },
   },
