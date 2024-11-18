@@ -266,60 +266,97 @@
             :class="{ hidden: !menuOpen3, block: menuOpen3 }"
           >
             <v-row align="center">
-              <v-col cols="2">
-                <img
-                  src="/img/footer/Facebook.svg"
-                  class="img-fluid rounded-top"
-                  alt=""
-                />
-              </v-col>
-              <v-col cols="8">
-                <p class="font-light">
-                  {{ $t("Facebook") }}
-                </p></v-col
+              <a
+                :href="data?.data?.facebook_link"
+                style="display: flex; width: 100%; text-decoration: none"
               >
+                <v-col cols="2">
+                  <img
+                    src="/img/footer/Facebook.svg"
+                    class="img-fluid rounded-top"
+                    alt="Facebook"
+                  />
+                </v-col>
+                <v-col cols="8">
+                  <p class="font-light">
+                    {{ $t("Facebook") }}
+                  </p>
+                </v-col>
+              </a>
             </v-row>
             <v-row align="center">
-              <v-col cols="2">
-                <img
-                  src="/img/footer/TWITER.svg"
-                  class="img-fluid rounded-top"
-                  alt=""
-                />
-              </v-col>
-              <v-col cols="8">
-                <p class="font-light">
-                  {{ $t("Twitter") }}
-                </p></v-col
+              <a
+                :href="data?.data?.twitter_link"
+                style="
+                  display: flex;
+                  width: 100%;
+                  text-decoration: none;
+                  align-items: center;
+                "
               >
+                <v-col cols="2">
+                  <img
+                    src="/img/footer/TWITER.svg"
+                    class="img-fluid rounded-top"
+                    alt="Twitter"
+                  />
+                </v-col>
+                <v-col cols="8">
+                  <p class="font-light">
+                    {{ $t("Twitter") }}
+                  </p>
+                </v-col>
+              </a>
             </v-row>
+
             <v-row align="center">
-              <v-col cols="2">
-                <img
-                  src="/img/footer/inst.svg"
-                  class="img-fluid rounded-top"
-                  alt=""
-                />
-              </v-col>
-              <v-col cols="8">
-                <p class="font-light">
-                  {{ $t("Instgram") }}
-                </p></v-col
+              <a
+                :href="data?.data?.instagram_link"
+                style="
+                  display: flex;
+                  width: 100%;
+                  text-decoration: none;
+                  align-items: center;
+                "
               >
+                <v-col cols="2">
+                  <img
+                    src="/img/footer/inst.svg"
+                    class="img-fluid rounded-top"
+                    alt="Instagram"
+                  />
+                </v-col>
+                <v-col cols="8">
+                  <p class="font-light">
+                    {{ $t("Instagram") }}
+                  </p>
+                </v-col>
+              </a>
             </v-row>
+
             <v-row align="center">
-              <v-col cols="2">
-                <img
-                  src="/img/footer/whats.svg"
-                  class="img-fluid rounded-top"
-                  alt=""
-                />
-              </v-col>
-              <v-col cols="8">
-                <p class="font-light">
-                  {{ $t("whatsapp") }}
-                </p></v-col
+              <a
+                :href="'https://wa.me/' + data?.data?.whatsapp_number"
+                style="
+                  display: flex;
+                  width: 100%;
+                  text-decoration: none;
+                  align-items: center;
+                "
               >
+                <v-col cols="2">
+                  <img
+                    src="/img/footer/whats.svg"
+                    class="img-fluid rounded-top"
+                    alt="WhatsApp"
+                  />
+                </v-col>
+                <v-col cols="8">
+                  <p class="font-light">
+                    {{ $t("whatsapp") }}
+                  </p>
+                </v-col>
+              </a>
             </v-row>
           </div></v-col
         >
@@ -339,14 +376,8 @@
       <v-sheet class="mx-auto" style="background: none; width: 100%">
         <v-slide-group show-arrows="false" style="width: 100%">
           <div class="d-flex m-auto">
-            <v-slide-group-item v-for="(bank, index) in banks" :key="index  ">
-              <div
-                style="
-                  display: block;
-                  margin: auto;
-                  width: 8%;
-                 "
-              >
+            <v-slide-group-item v-for="(bank, index) in banks" :key="index">
+              <div style="display: block; margin: auto; width: 8%">
                 <img class="mt-5" :src="bank.logo" alt="Bank logo" />
               </div>
             </v-slide-group-item>
@@ -375,21 +406,24 @@
 <script setup>
 const { locale } = useI18n(); // This will give you the current locale
 import { ref } from "vue"; // Import ref from Vue
+const config = useRuntimeConfig();
+
+const { data, error } = await useFetch(`${config.public.apiBase}general`);
 
 const footer = {
-  email: " info@alraqii.com",
-  phone: "+966568623333",
+  email: data?.value?.data?.email,
+  phone: data?.value?.data?.sms_number,
   address: {
-    ar: "جدة - الذهب- المملكة العربيه السعودية",
-    en: "Gada-Gold-Saudi Arabia",
+    ar: data?.value?.data?.address_ar,
+    en: data?.value?.data?.address_en,
   },
   copyright: {
     en: "&copy; 2024 elraqi. All rights reserved.",
     ar: "&copy; 2024 الراقي للتوصيل. جميع الحقوق محفوظة.",
   },
   createdBy: {
-    en: 'Created by <a href="https://www.linkedin.com/in/omar-a-mahran/" class="text-blue-400 hover:underline">Omar_A_Mahran</a>',
-    ar: 'تم الإنشاء بواسطة <a href="https://www.linkedin.com/in/omar-a-mahran/" class="text-blue-400 hover:underline">عمر مهران</a>',
+    // en: 'Created by <a href="https://www.linkedin.com/in/omar-a-mahran/" class="text-blue-400 hover:underline">Omar_A_Mahran</a>',
+    // ar: 'تم الإنشاء بواسطة <a href="https://www.linkedin.com/in/omar-a-mahran/" class="text-blue-400 hover:underline">عمر مهران</a>',
   },
 };
 const getAddress = () => {
@@ -420,6 +454,7 @@ const toggleMenu3 = () => {
   menuOpen3.value = !menuOpen3.value; // Toggle menu state
 };
 </script>
+
 <style scoped>
 /* Styling for the arrow */
 .arrow {

@@ -1,4 +1,4 @@
-<template>
+<template dir="rtl">
   <div>
     <NuxtLayout>
       <NuxtPage />
@@ -20,16 +20,7 @@
 
       <!-- Welcome message with cancel icon -->
       <div v-if="showWelcomeMessage" class="welcome-message mb-5">
-        <span>{{
-          $t(
-            "Hello there! To inquire about our prices and to make a reservation, please contact us via WhatsApp."
-          )
-        }}</span>
-
-        <p class="text-center mt-2 font-bold">
-          (( {{ $t("The website is under construction.") }} .{{ " " }} ))
-        </p>
-
+        <span>{{ message[locale] }}</span>
         <button @click="closeWelcomeMessage" class="close-btn">
           <i class="fa-times">x</i>
           <!-- Font Awesome close icon -->
@@ -44,13 +35,29 @@
 <script setup>
 import { DotLottieVue } from "@lottiefiles/dotlottie-vue";
 
+const config = useRuntimeConfig();
+
+// Get the current locale
+const { locale } = useI18n();
+const { data, error } = await useFetch(`${config.public.apiBase}general`);
+
+// Initialize the message object with translations for 'ar' and 'en'
+const message = ref({
+  ar: data?.value?.data?.whatsapp_message, // Arabic message
+  en: "Message in English", // English message
+});
+
 // Show welcome message after 3 seconds
 const showWelcomeMessage = ref(false);
 
 onMounted(() => {
-  setTimeout(() => {
-    showWelcomeMessage.value = true;
-  }, 3000); // 3 seconds delay
+  if (data?.value?.data?.whatsapp_show == 1) {
+    setTimeout(() => {
+      showWelcomeMessage.value = true;
+    }, data?.value?.data?.whatsapp_message_time * 1000);
+  } else {
+    const showWelcomeMessage = ref(false);
+  }
 });
 
 // Close welcome message function

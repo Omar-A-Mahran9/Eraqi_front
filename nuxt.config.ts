@@ -1,6 +1,11 @@
 import vuetify, { transformAssetUrls } from "vite-plugin-vuetify";
 
 export default defineNuxtConfig({
+  runtimeConfig: {
+    public: {
+      apiBase: "http://127.0.0.1:8000/api/", // Public base URL
+    },
+  },
   css: [
     "~/assets/css/main.css", // Use tilde (~) instead of @
     "~/assets/css/fonts.css",
@@ -16,6 +21,10 @@ export default defineNuxtConfig({
   i18n: {
     vueI18n: "./i18n.config.ts", // Ensure this path is correct
   },
+
+  plugins: [
+    "~/plugins/sweetalert2.ts", // Ensure the path is correct
+  ],
 
   modules: [
     (_options, nuxt) => {
@@ -43,5 +52,5 @@ export default defineNuxtConfig({
     },
   },
 
-  compatibilityDate: "2024-10-18"
+  compatibilityDate: "2024-10-18",
 });
