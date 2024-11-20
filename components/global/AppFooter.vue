@@ -195,7 +195,7 @@
             </li>
             <li>
               <nuxt-link
-                to="#"
+                to="/program"
                 class="-mx-3 block rounded-lg px-3 py-1 text-base font-semibold leading-7 text-white"
                 >{{ $t("for travel and tourism agencies") }}</nuxt-link
               >
