@@ -1,39 +1,44 @@
 <template>
-    <AboutHeroSection />
-    <AboutSection :data="data" />
+  <AboutHeroSection />
+  <AboutSection :data="dataa" />
 </template>
 
 <script setup>
-const data = {
-    about: {
-        title: {
-            ar: "معلومات عنا",
-            en: "About Us",
-        },
-        Description: {
-            ar: "عمل تحليل شامل ودراسة السوق والمنافسين ونقاط قوتهم وضعفهم لتقديم حلول مبتكرة تحقيجب الالتزام بجميع الشروط والأحكام الخاصة باستخدام الخدمات يجب الالتزام بجميع الشروط والأحكام الخاصة باستخدام الخدمات يجب الالتزام بجميع الشروط والأحكام الخاصة باستخدام الخدمات يجب الالتزام بجميع الشروط والأحكام الخاصة باستخدام الخدمات يجب الالتزام بجميع الشروط والأحكام الخاصة باستخدام الخدمات يجب الالتزام بجميع الشروط والأحكام الخاصة باستخدام الخدمات يجب الالتزام بجميع الشروط والأحكام الخاصة باستخدام الخدمات يجب الالتزام بجميع الشروط والأحكام الخاصة باستخدام الخدمات يجب الالتزام بجميع الشروط والأحكام الخاصة باستخدام الخدمات يجب الالتزام بجميع الشروط والأحكام الخاصة باستخدام الخدمات يجب الالتزام بجميع الشروط والأحكام الخاصة باستخدام الخدمات يجب الالتزام بجميع الشروط والأحكام الخاصة باستخدام الخدمات يجب الالتزام بجميع الشروط والأحكام الخاصة باستخدام الخدمات يجب الالتزام بجميع الشروط والأحكام الخاصة باستخدام الخدمات يجب الالتزام بجميع الشروط والأحكام الخاصة باستخدام الخدمات يجب الالتزام بجميع الشروط والأحكام الخاصة باستخدام الخدمات يجب الالتزام بجميع الشروط والأحكام الخاصة باستخدام الخدمات يجب الالتزام بجميع الشروط والأحكام الخاصة باستخدام الخدمات يجب الالتزام بجميع الشروط والأحكام الخاصة باستخدام الخدمات يجب الالتزام بجميع الشروط والأحكام الخاصة باستخدام الخدمات يجب الالتزام بجميع الشروط والأحكام الخاصة باستخدام الخدمات ق التميز التنافسي في السوق.",
-            en: "Conducting a comprehensive analysis and study of the market and competitors, identifying their strengths and weaknesses to provide innovative solutions that achieve competitive excellence in the market.",
-        },
+const config = useRuntimeConfig();
+
+const { data, error } = await useFetch(`${config.public.apiBase}general`);
+console.log(data?.value?.data);
+
+const dataa = {
+  about: {
+    title: {
+      ar: "معلومات عنا",
+      en: "About Us",
     },
-    conditions: {
-        title: {
-            ar: "الشروط والأحكام",
-            en: "Terms and Conditions",
-        },
-        Description: {
-            ar: "يجب الالتزام بجميع الشروط والأحكام الخاصة باستخدام الخدمات يجب الالتزام بجميع الشروط والأحكام الخاصة باستخدام الخدمات يجب الالتزام بجميع الشروط والأحكام الخاصة باستخدام الخدمات يجب الالتزام بجميع الشروط والأحكام الخاصة باستخدام الخدمات يجب الالتزام بجميع الشروط والأحكام الخاصة باستخدام الخدمات يجب الالتزام بجميع الشروط والأحكام الخاصة باستخدام الخدمات يجب الالتزام بجميع الشروط والأحكام الخاصة باستخدام الخدمات يجب الالتزام بجميع الشروط والأحكام الخاصة باستخدام الخدمات يجب الالتزام بجميع الشروط والأحكام الخاصة باستخدام الخدمات يجب الالتزام بجميع الشروط والأحكام الخاصة باستخدام الخدمات يجب الالتزام بجميع الشروط والأحكام الخاصة باستخدام الخدمات يجب الالتزام بجميع الشروط والأحكام الخاصة باستخدام الخدمات المقدمة على موقعنا. نوصي بمراجعتها بعناية قبل إجراء أي عملية.",
-            en: "You must adhere to all the terms and conditions regarding the use of services provided on our website. We recommend reviewing them carefully before making any transactions.",
-        },
+    Description: {
+      ar: data?.value?.data?.about_us?.description,
+      en: data?.value?.data?.about_us?.description,
     },
-    programs: {
-        title: {
-            ar: "برنامج الولاء والمكافآت",
-            en: "Loyalty and Rewards Program",
-        },
-        Description: {
-            ar: "1- يجب أن يكون لديك حساب على موقعنا.\n 2- يمكنك الحصول على خصم يصل إلى 20٪ على الحجوزات.",
-            en: "1- You must have an account on our website.\n2- You can receive a discount of up to 20% on bookings.",
-        },
+  },
+  conditions: {
+    title: {
+      ar: "الشروط والأحكام",
+      en: "Terms and Conditions",
     },
+    Description: {
+      ar: data?.value?.data?.terms_and_condition,
+      en: data?.value?.data?.terms_and_condition,
+    },
+  },
+  programs: {
+    title: {
+      ar: "برنامج الولاء والمكافآت",
+      en: "Loyalty and Rewards Program",
+    },
+    Description: {
+      ar: data?.value?.data?.loyality,
+      ar: data?.value?.data?.loyality,
+    },
+  },
 };
 </script>

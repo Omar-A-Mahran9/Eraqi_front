@@ -3,7 +3,7 @@
     <v-carousel-item
       v-for="(image, index) in images"
       :key="index"
-      src="`/img/index/hero.png`"
+      src="/img/index/hero.png"
       cover
     >
       <div class="relative w-full h-full">

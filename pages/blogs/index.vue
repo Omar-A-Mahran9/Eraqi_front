@@ -104,80 +104,27 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 const { t, locale } = useI18n();
+const config = useRuntimeConfig();
 
+const { data, error } = await useFetch(`${config.public.apiBase}blogs`);
+console.log(data?.value?.data);
 // Sample blogs data
-const blogs = ref([
-  {
-    id: 1,
-    title: {
-      ar: "بلوج",
-      en: "Blog 1",
-    },
-    imageUrl: "https://cdn.vuetifyjs.com/images/cards/cooking.png",
-    description: {
-      ar: "هذا هو بلوج",
-      en: "Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.",
-    },
+const blogs = ref([]);
 
-    date: "1/10/2021",
+// Transform the API response to match the desired structure
+blogs.value = data?.value?.data?.map((blog) => ({
+  id: blog.id,
+  title: {
+    ar: blog.name,
+    en: blog.name, // Adjust this if the API returns titles in different languages
   },
-  {
-    id: 1,
-    title: {
-      ar: "بلوج",
-      en: "Blog 1",
-    },
-    imageUrl: "https://cdn.vuetifyjs.com/images/cards/cooking.png",
-    description: {
-      ar: "هذا هو بلوج",
-      en: "Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.",
-    },
-
-    date: "1/10/2021",
+  imageUrl: blog.image,
+  description: {
+    ar: blog.description,
+    en: blog.description, // Adjust this if the API provides descriptions in different languages
   },
-  {
-    id: 1,
-    title: {
-      ar: "بلوج",
-      en: "Blog 1",
-    },
-    imageUrl: "https://cdn.vuetifyjs.com/images/cards/cooking.png",
-    description: {
-      ar: "هذا هو بلوج",
-      en: "Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.",
-    },
-
-    date: "1/10/2021",
-  },
-  {
-    id: 1,
-    title: {
-      ar: "بلوج",
-      en: "Blog 1",
-    },
-    imageUrl: "https://cdn.vuetifyjs.com/images/cards/cooking.png",
-    description: {
-      ar: "هذا هو بلوج",
-      en: "Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.",
-    },
-
-    date: "1/10/2021",
-  },
-  {
-    id: 1,
-    title: {
-      ar: "بلوج",
-      en: "Blog 1",
-    },
-    imageUrl: "https://cdn.vuetifyjs.com/images/cards/cooking.png",
-    description: {
-      ar: "هذا هو بلوج",
-      en: "Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.",
-    },
-
-    date: "1/10/2021",
-  },
-]);
+  date: blog.created, // Add a date field if needed or replace with data from API
+}));
 
 // Swiper event handlers
 const onSwiper = (swiper) => {

@@ -2,8 +2,8 @@
   <HomeHeroSection />
   <HomeOurService />
   <!-- <HomeWhyUsSection /> -->
-  <HomeCarTypesSection />
-  <HomeClientEvaluationSection />
+  <HomeCarTypesSection :data="data" />
+  <HomeClientEvaluationSection :data="data" />
   <HomeCommonQuestions />
   <HomeContactSection
     :getAddress="getAddress()"

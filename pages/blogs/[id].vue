@@ -6,7 +6,7 @@
           <v-col>
             <div class="main-img">
               <img
-                src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
+                :src="blog.full_image_path"
                 alt="Cooking illustration"
                 class="cover-image"
               />
@@ -140,90 +140,38 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 const { t, locale } = useI18n();
+const route = useRoute();
 
-// Sample blogs data
-const blogs = ref([
-  {
-    id: 1,
-    title: {
-      ar: "بلوج",
-      en: "Blog 1",
-    },
-    imageUrl: "https://cdn.vuetifyjs.com/images/cards/cooking.png",
-    description: {
-      ar: "هذا هو بلوج",
-      en: "Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.",
-    },
-
-    date: "1/10/2021",
-  },
-  {
-    id: 1,
-    title: {
-      ar: "بلوج",
-      en: "Blog 1",
-    },
-    imageUrl: "https://cdn.vuetifyjs.com/images/cards/cooking.png",
-    description: {
-      ar: "هذا هو بلوج",
-      en: "Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.",
-    },
-
-    date: "1/10/2021",
-  },
-  {
-    id: 1,
-    title: {
-      ar: "بلوج",
-      en: "Blog 1",
-    },
-    imageUrl: "https://cdn.vuetifyjs.com/images/cards/cooking.png",
-    description: {
-      ar: "هذا هو بلوج",
-      en: "Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.",
-    },
-
-    date: "1/10/2021",
-  },
-  {
-    id: 1,
-    title: {
-      ar: "بلوج",
-      en: "Blog 1",
-    },
-    imageUrl: "https://cdn.vuetifyjs.com/images/cards/cooking.png",
-    description: {
-      ar: "هذا هو بلوج",
-      en: "Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.",
-    },
-
-    date: "1/10/2021",
-  },
-  {
-    id: 1,
-    title: {
-      ar: "بلوج",
-      en: "Blog 1",
-    },
-    imageUrl: "https://cdn.vuetifyjs.com/images/cards/cooking.png",
-    description: {
-      ar: "هذا هو بلوج",
-      en: "Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.",
-    },
-
-    date: "1/10/2021",
-  },
-]);
-
-const blog = {
-  date: "١٠ ابريل ٢٠٢٤",
+const config = useRuntimeConfig();
+const { data, error } = await useFetch(
+  `${config.public.apiBase}blog/${route.params.id}`
+);
+const relatedBlogs = data?.value?.data?.relatedBlogs.map((blog) => ({
+  id: blog.id,
   title: {
-    ar: "مفاهيم ادارة منصات السوشيال ميديا  ادارة منصات",
-    en: "oncepts of Managing Social Media Platforms.",
+    ar: blog.name, // Assuming 'name' is the field for the title
+    en: blog.name, // If your API provides titles in different languages, adjust as needed
+  },
+  imageUrl: blog.full_image_path, // Assuming 'image' is the URL for the image
+  description: {
+    ar: blog.description, // Assuming 'description' is the field for the blog's description
+    en: blog.description, // If you have translations, you can adjust this accordingly
+  },
+  date: blog.created_at ? new Date(blog.created_at).toLocaleDateString() : "", // Format the date if necessary
+}));
+
+// If you want to assign this to a reactive `ref` in Vue
+const blogs = ref(relatedBlogs);
+const blog = {
+  full_image_path: data?.value?.data?.full_image_path,
+  date: data?.value?.data?.created_at,
+  title: {
+    ar: data?.value?.data?.name,
+    en: data?.value?.data?.name,
   },
   description: {
-    ar: "عمل تحليل شامل و دراسة السوق و المنافسين و نقاط قوتهم و ضعفهم نقاط قوتهم و ضعفهم و ضعفهم نقاط قوتهم و ضعفهم و المنافسين و نقاط قوتهم و ضعفهم نقاط قوتهم و ضعفهم و ضعفهم نقاط قوتهم و ضعفهم  و ضعفهم و المنافسين و نقاط قوتهم و ضعفهم نقاط قوتهم و ضعفهم و ضعفهم نقاط قوتهم و ضعفهم و ضعفهم ضعفهم نقاط قوتهم و ضعفهم و ضعفهم نقاط قوتهم و ضعفهم و ضعفهم ضعفهم نقاط قوتهم و ضعفهم و ضعفهم نقاط قوتهم و ضعفهم و ضعفهم ضعفهم نقاط قوتهم و ضعفهم و ضعفهم نقاط قوتهم و ضعفهم و ضعفهم ضعفهم نقاط قوتهم و ضعفهم و ضعفهم نقاط قوتهم و ضعفهم و ضعفهم ضعفهم نقاط قوتهم و ضعفهم و ضعفهم نقاط قوتهم و ضعفهم و ضعفهم ضعفهم نقاط قوتهم و ضعفهم و ضعفهم نقاط قوتهم و ضعفهم و ضعفهم ضعفهم نقاط قوتهم و ضعفهم و ضعفهم نقاط قوتهم و ضعفهم و ضعفهم و ضعفهم نقاط قوتهم و ضعفهم  و ضعفهم ",
-    en: "Conduct a comprehensive analysis and study of the market and competitorsensive analysis and study of the market and competitorsensive analysis and study of the market and competitorsensive analysis and study of the market and competitorsensive analysis and study of the market and competitorsensive analysis and study of the market and competitorsensive analysis and study of the market and competitorsensive analysis and study of the market and competitorsensive analysis and study of the market and competitorsensive analysis and study of the market and competitors, their strengths and weaknesses, strengths and weaknesses, weaknesses, strengths and weaknesses, competitors and their strengths and weaknesses, strengths and weaknesses, weaknesses, strengths and weaknesses, weaknesses, strengths and weaknesses.",
+    ar: data?.value?.data?.description,
+    ar: data?.value?.data?.description,
   },
 };
 
