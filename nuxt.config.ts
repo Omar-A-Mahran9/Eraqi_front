@@ -18,6 +18,8 @@ export default defineNuxtConfig({
     transpile: ["vuetify"],
   },
 
+  ssr:false,
+
   i18n: {
     vueI18n: "./i18n.config.ts", // Ensure this path is correct
   },
@@ -33,7 +35,7 @@ export default defineNuxtConfig({
       config.plugins.push(vuetify({ autoImport: true }));
     });
   },
-  "@nuxtjs/i18n", "@nuxtjs/tailwindcss"],
+  "@nuxtjs/i18n", "@nuxtjs/tailwindcss", "@vueuse/nuxt"],
 
   // vite: {
   //   vue: {

@@ -41,4 +41,8 @@ const footer = {
 const getAddress = () => {
   return footer.address[locale.value] || footer.address["en"]; // Default to English if locale is not found
 };
+
+onMounted(() => {
+  
+});
 </script>

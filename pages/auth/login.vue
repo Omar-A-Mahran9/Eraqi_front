@@ -22,6 +22,7 @@
                 class="mb-4"
                 :placeholder="$t('Email address')"
                 variant="solo"
+                v-model="formData.email"
                 style="border-radius: 25px"
             >
                 <template v-slot:prepend-inner>
@@ -51,11 +52,13 @@
                     </svg>
                 </template>
             </v-text-field>
+            <div v-if="errors" class="mb-3 text-[tomato]">{{ errors?.email[0] }}</div>
             <v-text-field
                 :append-inner-icon="visible ? 'mdi-eye-off' : 'mdi-eye'"
                 :type="visible ? 'text' : 'password'"
                 :placeholder="$t('Enter your password')"
                 variant="solo"
+                v-model="formData.password"
                 @click:append-inner="visible = !visible"
                 style="margin-bottom: -12px"
             >
@@ -92,6 +95,8 @@
                         />
                     </svg> </template
             ></v-text-field>
+            <div v-if="errors" class="mb-3 text-[tomato]">{{ errors?.password[0] }}</div>
+
             <div
                 class="text-medium-emphasis d-flex align-center justify-space-between mb-20"
             >
@@ -107,6 +112,7 @@
             </div>
 
             <v-btn
+            @click="submitForm()"
                 class="mb-1"
                 size="x-large"
                 block
@@ -124,17 +130,61 @@
                     {{ $t("Not have account ?") }}
                 </p>
 
-                <a
+                <nuxt-link
                     class="text-main text-decoration-none"
-                    href="/auth/register"
+                    to="/auth/register"
                     rel="noopener noreferrer"
                 >
                     {{ $t("Sign up now") }}
-                </a>
+                </nuxt-link>
             </v-card-text>
         </v-card>
+        {{errors}}
     </div>
 </template>
 <script setup>
+import { useStorage } from '@vueuse/core'
 const isFocused = false;
+const config = useRuntimeConfig();
+const formData = ref({
+    email: '',
+  password: '',
+});
+
+let router = useRouter();
+const response = ref(null)
+const errors = ref(null)
+const message = ref(null)
+let token = ref( localStorage.getItem('token') ? localStorage.getItem('token') : null);
+
+watch(()=> token.value , (val)=>{
+    if(val){
+     router.push('/'); 
+    }
+})
+const submitForm = async () => {
+    const { data , error , status } = await useFetch(`${config.public.apiBase}login`, {
+      method: 'POST',
+      body: formData.value, 
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+
+     if(error.value){
+        errors.value = error.value.data.errors
+        console.log(error.value.data.errors);
+        
+     }
+    response.value = data.value
+    if(data.value){
+        localStorage.setItem("token" , data.value.data.token);
+        localStorage.setItem("user" , data.value.data.user);
+        token.value = data.value.data.token;
+        router.push('/');
+   
+    }
+    console.log('Response:', response.value)
+  
+}
 </script>
