@@ -35,6 +35,8 @@
         @swiper="onSwiper"
         @slideChange="onSlideChange"
       >
+      {{rating}}
+
         <swiper-slide v-for="(rate, index) in ratings" :key="index">
           <div id="swiper-container">
             <v-card
