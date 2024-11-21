@@ -9,16 +9,16 @@
       </p>
     </div>
     <div>
-      <swiper
+      <!-- <swiper
         :dir="swiperDirection"
         :initial-slide="Math.floor(ratings.length / 2)"
         :breakpoints="{
           640: {
-            // small screens (sm)
+           
             slidesPerView: 1,
           },
           960: {
-            // medium screens (md)
+            
             slidesPerView: 3,
           },
         }"
@@ -53,10 +53,10 @@
                       :src="rate.person.img"
                       alt=""
                       style="
-                        width: 50px; /* Adjust size as needed */
-                        height: 50px; /* Match width for a perfect circle */
-                        border-radius: 50%; /* Makes the image circular */
-                        object-fit: cover; /* Ensures the image fits within the circle */
+                        width: 50px; 
+                        height: 50px; 
+                        border-radius: 50%; 
+                        object-fit: cover; 
                       "
                     />
 
@@ -85,7 +85,7 @@
             </v-card>
           </div>
         </swiper-slide>
-      </swiper>
+      </swiper> -->
       <div
         class="custom-swiper-navigation"
         :dir="locale === 'ar' ? 'rtl' : 'ltr'"
@@ -131,7 +131,7 @@ watch(
     swiperDirection.value = newLocale === "ar" ? "rtl" : "ltr";
   }
 );
-const ratings_data = props.data.data.Rate;
+// const ratings_data = props.data.data.Rate;
 // const ratings = [
 //   {
 //     person: {
@@ -150,20 +150,20 @@ const ratings_data = props.data.data.Rate;
 // ];
 
 // Map the `ratings_data` to the same structure as the `ratings` array
-const ratings = ratings_data.map((rating) => ({
-  person: {
-    name: {
-      ar: rating?.customer_name, // Arabic name from props
-      en: rating?.customer_name, // English name from props
-    },
-    img: rating?.customer_image, // Image from props
-    title: {
-      ar: rating?.comment, // Arabic title from props
-      en: rating?.comment, // English title from props
-    },
-  },
-  rating: rating?.rate, // Rating from props
-}));
+// const ratings = ratings_data.map((rating) => ({
+//   person: {
+//     name: {
+//       ar: rating?.customer_name, // Arabic name from props
+//       en: rating?.customer_name, // English name from props
+//     },
+//     img: rating?.customer_image, // Image from props
+//     title: {
+//       ar: rating?.comment, // Arabic title from props
+//       en: rating?.comment, // English title from props
+//     },
+//   },
+//   rating: rating?.rate, // Rating from props
+// }));
 
 const onSlideChange = () => {
   console.log("slide change");

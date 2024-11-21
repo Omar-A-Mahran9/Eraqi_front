@@ -133,152 +133,12 @@
                     </div>
                 </div>
             </div>
-            <div class="flex items-center justify-center">
-
-                <div class="main-form w-[70%] p-5 bg-white mt-[100px]">
-                    <h1 class="text-[#1A202C] text-[22px] mb-6 font-bold"> معلومات الحجز </h1>
-                    <div class="flex items-center gap-3">
-                        <v-radio-group class=" !w-[200px]" v-model="inline" :dir="locale == 'ar' ? 'rtl' : 'ltr'"
-                            inline>
-                            <v-radio label="ذهاب فقط" color="#BBA664" value="radio-1"></v-radio>
-                            <v-radio label="ذهاب و عودة" color="#BBA664" value="radio-2"></v-radio>
-                        </v-radio-group>
-                        <div class="flex items-center gap-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
-                                fill="none">
-                                <g clip-path="url(#clip0_29_40444)">
-                                    <path
-                                        d="M10 0C12.6522 0 15.1957 1.05357 17.0711 2.92893C18.9464 4.8043 20 7.34784 20 10C20 12.6522 18.9464 15.1957 17.0711 17.0711C15.1957 18.9464 12.6522 20 10 20C7.34784 20 4.8043 18.9464 2.92893 17.0711C1.05357 15.1957 0 12.6522 0 10C0 7.34784 1.05357 4.8043 2.92893 2.92893C4.8043 1.05357 7.34784 0 10 0ZM1.875 10C1.875 12.1549 2.73102 14.2215 4.25476 15.7452C5.77849 17.269 7.84512 18.125 10 18.125C12.1549 18.125 14.2215 17.269 15.7452 15.7452C17.269 14.2215 18.125 12.1549 18.125 10C18.125 7.84512 17.269 5.77849 15.7452 4.25476C14.2215 2.73102 12.1549 1.875 10 1.875C7.84512 1.875 5.77849 2.73102 4.25476 4.25476C2.73102 5.77849 1.875 7.84512 1.875 10ZM7.97375 6.53375L13.3037 9.7325C13.3498 9.76032 13.3879 9.79956 13.4144 9.84643C13.4408 9.89329 13.4547 9.94619 13.4547 10C13.4547 10.0538 13.4408 10.1067 13.4144 10.1536C13.3879 10.2004 13.3498 10.2397 13.3037 10.2675L7.97375 13.4662C7.92635 13.4948 7.87223 13.5103 7.8169 13.511C7.76157 13.5118 7.70703 13.4979 7.65885 13.4707C7.61067 13.4435 7.57057 13.404 7.54267 13.3562C7.51476 13.3084 7.50003 13.2541 7.5 13.1987V6.8025C7.49981 6.74706 7.51437 6.69257 7.54219 6.64462C7.57001 6.59667 7.61009 6.55698 7.65831 6.52962C7.70652 6.50227 7.76115 6.48823 7.81659 6.48896C7.87202 6.48969 7.92626 6.50514 7.97375 6.53375Z"
-                                        fill="#BBA664" />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_29_40444">
-                                        <rect width="20" height="20" fill="white" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                            <span class="text-main text-[12px] font-medium"> مشاهده الفيديو </span>
-                        </div>
-                    </div>
-                    <div class="inputs mt-8">
-                        <div class="grid grid-cols-2 gap-5">
-                            <div class="input flex flex-col gap-2">
-                                <label for="" class="font-bold mb-2"> من <span class="text-main"> * </span></label>
-                                <v-text-field :dir="locale == 'ar' ? 'rtl' : 'ltr'" append-inner-icon="mdi-map-marker"
-                                    label="" class="" variant="solo-filled"></v-text-field>
-                            </div>
-                            <div class="input flex flex-col gap-2">
-                                <label for="" class="font-bold mb-2"> إلى <span class="text-main"> * </span></label>
-                                <v-text-field :dir="locale == 'ar' ? 'rtl' : 'ltr'" append-inner-icon="mdi-map-marker"
-                                    label="" class="" variant="solo-filled"></v-text-field>
-                            </div>
-                            <div class="input flex flex-col gap-2">
-                                <label for="" class="font-bold mb-2"> الوقت <span class="text-main"> * </span></label>
-                                <v-text-field :dir="locale == 'ar' ? 'rtl' : 'ltr'"
-                                    append-inner-icon="mdi-clock-time-eight-outline" label="" class=""
-                                    variant="solo-filled"></v-text-field>
-                            </div>
-                            <div class="input flex flex-col gap-2">
-                                <label for="" class="font-bold mb-2"> تاريخ الحجز <span class="text-main"> *
-                                    </span></label>
-                                <v-text-field :dir="locale == 'ar' ? 'rtl' : 'ltr'"
-                                    append-inner-icon="mdi-calendar-blank-outline" label="" class=""
-                                    variant="solo-filled"></v-text-field>
-                            </div>
-                            <div class="input flex flex-col gap-2">
-                                <label for="" class="font-bold mb-2"> المدة <span class="text-main"> * </span></label>
-                                <v-text-field :dir="locale == 'ar' ? 'rtl' : 'ltr'"
-                                    append-inner-icon="mdi-calendar-blank-outline" label="" class=""
-                                    variant="solo-filled"></v-text-field>
-                            </div>
-                            <div class="input flex flex-col gap-2">
-                                <label for="" class="font-bold mb-2"> الركّاب <span class="text-main"> * </span></label>
-                                <v-text-field :dir="locale == 'ar' ? 'rtl' : 'ltr'" append-inner-icon="mdi-account"
-                                    label="" class="" variant="solo-filled"></v-text-field>
-                            </div>
-                        </div>
-                        <div class="mt-5">
-                            <span>الفئة</span>
-                            <span class="text-main"> * </span>
-                        </div>
-                        <div class="grid mt-4 mb-4 grid-cols-2 gap-5">
-                            <div v-for="i in 4" class="box border-[1px] border-[#E0E0E0] rounded-md p-4">
-                                <span class="font-bold text-[#696969]">اقتصادية</span>
-                                <h5 class="font-bold my-2"> كامري/سوناتا 2024 </h5>
-                                <div class="image-container w-full d-flex items-center justify-between">
-                                    <img src="/img/index/cartype2.svg" alt="">
-                                    <div class="details">
-                                        <span class="font-bold"> من 250 ر.س </span>
-                                        <div class="flex items-center gap-4">
-                                            <div class="flex items-center gap-2">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                    viewBox="0 0 20 20" fill="none">
-                                                    <g clip-path="url(#clip0_29_40395)">
-                                                        <path
-                                                            d="M10.0004 3.99905C10.2631 3.99898 10.5232 3.94717 10.7659 3.84658C11.0086 3.74598 11.2291 3.59857 11.4148 3.41276C11.6005 3.22695 11.7478 3.00638 11.8483 2.76364C11.9488 2.52091 12.0005 2.26076 12.0004 1.99805C12.0003 1.73534 11.9485 1.47521 11.8479 1.23253C11.7473 0.98984 11.5999 0.769343 11.4141 0.583626C11.2283 0.397909 11.0077 0.250608 10.765 0.150135C10.5223 0.0496607 10.2621 -0.00201873 9.9994 -0.00195306C9.46884 -0.00182045 8.96006 0.209073 8.58498 0.584333C8.20991 0.959594 7.99927 1.46848 7.9994 1.99905C7.99954 2.52961 8.21043 3.03839 8.58569 3.41347C8.96095 3.78854 9.46984 3.99918 10.0004 3.99905ZM15.9784 11.582C15.5934 9.80705 14.9204 6.89405 13.9364 5.68805C12.9794 4.51505 11.0514 4.46605 10.0004 4.46605C8.9494 4.46605 7.0214 4.51505 6.0644 5.68805C5.0804 6.89405 4.4074 9.80705 4.0224 11.582C3.8094 12.565 5.1764 12.926 5.5334 11.937C6.0644 10.464 6.4744 9.22705 7.3724 8.20105C7.8444 11.108 6.1024 16.167 6.0004 18.999C6.00023 19.2328 6.08197 19.4593 6.2314 19.639C6.38083 19.8188 6.58853 19.9405 6.81839 19.9831C7.04825 20.0256 7.28575 19.9863 7.48963 19.8719C7.69351 19.7576 7.85089 19.5754 7.9344 19.357C8.3914 17.77 10.0004 13.354 10.0004 13.354C10.0004 13.354 11.6094 17.77 12.0664 19.357C12.1499 19.5754 12.3073 19.7576 12.5112 19.8719C12.7151 19.9863 12.9526 20.0256 13.1824 19.9831C13.4123 19.9405 13.62 19.8188 13.7694 19.639C13.9188 19.4593 14.0006 19.2328 14.0004 18.999C13.8984 16.167 12.1564 11.108 12.6284 8.20205C13.5264 9.22805 13.9364 10.465 14.4674 11.938C14.8234 12.926 16.1914 12.565 15.9784 11.582Z"
-                                                            fill="black" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_29_40395">
-                                                            <rect width="20" height="20" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                                <span class="font-bold"> x4 </span>
-                                            </div>
-                                            <div class="flex items-center gap-2">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                                    viewBox="0 0 14 14" fill="none">
-                                                    <g clip-path="url(#clip0_29_40393)">
-                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                            d="M5 0.0195312C4.53587 0.0195313 4.09075 0.203906 3.76256 0.532094C3.43437 0.860283 3.25 1.3054 3.25 1.76953V2.99953H1.5C1.10218 2.99953 0.720644 3.15757 0.43934 3.43887C0.158035 3.72018 0 4.10171 0 4.49953L0 12.4995C0 12.8974 0.158035 13.2789 0.43934 13.5602C0.720644 13.8415 1.10218 13.9995 1.5 13.9995H12.5C12.8978 13.9995 13.2794 13.8415 13.5607 13.5602C13.842 13.2789 14 12.8974 14 12.4995V4.49953C14 4.10171 13.842 3.72018 13.5607 3.43887C13.2794 3.15757 12.8978 2.99953 12.5 2.99953H10.75V1.76953C10.75 1.3054 10.5656 0.860283 10.2374 0.532094C9.90925 0.203906 9.46413 0.0195313 9 0.0195312H5ZM9.25 2.99953V1.76953C9.25 1.70323 9.22366 1.63964 9.17678 1.59275C9.12989 1.54587 9.0663 1.51953 9 1.51953H5C4.9337 1.51953 4.87011 1.54587 4.82322 1.59275C4.77634 1.63964 4.75 1.70323 4.75 1.76953V2.99953H9.25Z"
-                                                            fill="black" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_29_40393">
-                                                            <rect width="14" height="14" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                                <span class="font-bold"> x4 </span>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+    
             <div class="flex items-center flex-col justify-center">
 
                 <div class="main-form w-[70%] p-5 bg-white mt-10">
                     <h1 class="text-[#1A202C] text-[22px] mb-6 font-bold"> معلومات العميل </h1>
-                    <div class="flex items-center gap-3">
-                        <v-radio-group class=" !w-[200px]" v-model="inline" :dir="locale == 'ar' ? 'rtl' : 'ltr'"
-                            inline>
-                            <v-radio label="ذهاب فقط" color="#BBA664" value="radio-1"></v-radio>
-                            <v-radio label="ذهاب و عودة" color="#BBA664" value="radio-2"></v-radio>
-                        </v-radio-group>
-                        <div class="flex items-center gap-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
-                                fill="none">
-                                <g clip-path="url(#clip0_29_40444)">
-                                    <path
-                                        d="M10 0C12.6522 0 15.1957 1.05357 17.0711 2.92893C18.9464 4.8043 20 7.34784 20 10C20 12.6522 18.9464 15.1957 17.0711 17.0711C15.1957 18.9464 12.6522 20 10 20C7.34784 20 4.8043 18.9464 2.92893 17.0711C1.05357 15.1957 0 12.6522 0 10C0 7.34784 1.05357 4.8043 2.92893 2.92893C4.8043 1.05357 7.34784 0 10 0ZM1.875 10C1.875 12.1549 2.73102 14.2215 4.25476 15.7452C5.77849 17.269 7.84512 18.125 10 18.125C12.1549 18.125 14.2215 17.269 15.7452 15.7452C17.269 14.2215 18.125 12.1549 18.125 10C18.125 7.84512 17.269 5.77849 15.7452 4.25476C14.2215 2.73102 12.1549 1.875 10 1.875C7.84512 1.875 5.77849 2.73102 4.25476 4.25476C2.73102 5.77849 1.875 7.84512 1.875 10ZM7.97375 6.53375L13.3037 9.7325C13.3498 9.76032 13.3879 9.79956 13.4144 9.84643C13.4408 9.89329 13.4547 9.94619 13.4547 10C13.4547 10.0538 13.4408 10.1067 13.4144 10.1536C13.3879 10.2004 13.3498 10.2397 13.3037 10.2675L7.97375 13.4662C7.92635 13.4948 7.87223 13.5103 7.8169 13.511C7.76157 13.5118 7.70703 13.4979 7.65885 13.4707C7.61067 13.4435 7.57057 13.404 7.54267 13.3562C7.51476 13.3084 7.50003 13.2541 7.5 13.1987V6.8025C7.49981 6.74706 7.51437 6.69257 7.54219 6.64462C7.57001 6.59667 7.61009 6.55698 7.65831 6.52962C7.70652 6.50227 7.76115 6.48823 7.81659 6.48896C7.87202 6.48969 7.92626 6.50514 7.97375 6.53375Z"
-                                        fill="#BBA664" />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_29_40444">
-                                        <rect width="20" height="20" fill="white" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                            <span class="text-main text-[12px] font-medium"> مشاهده الفيديو </span>
-                        </div>
-                    </div>
+                 
                     <div class="inputs mt-8">
                         <div class="grid grid-cols-2 gap-5">
                             <div class="input flex flex-col gap-2">
@@ -299,60 +159,32 @@
                                 <v-text-field :dir="locale == 'ar' ? 'rtl' : 'ltr'" label="" class=""
                                     variant="solo-filled"></v-text-field>
                             </div>
-                        </div>
-                        <div class="input flex justify-center items-center  flex-col gap-2">
-                            <div for="" class="font-bold mb-2"> صورة التذكرة <span class="text-main"> * </span>
+                            <div class="input flex flex-col gap-2">
+                                <label for="" class="font-bold mb-2"> الوقت <span class="text-main"> *
+                                    </span></label>
+                                <v-text-field :dir="locale == 'ar' ? 'rtl' : 'ltr'"  label="" class=""
+                                    variant="solo-filled"></v-text-field>
                             </div>
-                            <p class="font-medium text-[#9094A0] text-[12px]"> يرجى إرفاق صورة من حجز الطيران أو رقم
-                                الرحلة </p>
-                            <label for="file-input1"
-                                class="flex items-center cursor-pointer flex-col gap-3 w-[200px] bg-[#FAFCFE] rounded-lg p-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38"
-                                    fill="none">
-                                    <g clip-path="url(#clip0_29_40477)">
-                                        <path
-                                            d="M15.8337 25.3327H22.167C23.0378 25.3327 23.7503 24.6202 23.7503 23.7493V15.8327H26.2678C27.677 15.8327 28.3895 14.1227 27.392 13.1252L20.1245 5.85766C19.507 5.24016 18.5095 5.24016 17.892 5.85766L10.6245 13.1252C9.62699 14.1227 10.3237 15.8327 11.7328 15.8327H14.2503V23.7493C14.2503 24.6202 14.9628 25.3327 15.8337 25.3327ZM9.50033 28.4993H28.5003C29.3712 28.4993 30.0837 29.2118 30.0837 30.0827C30.0837 30.9535 29.3712 31.666 28.5003 31.666H9.50033C8.62949 31.666 7.91699 30.9535 7.91699 30.0827C7.91699 29.2118 8.62949 28.4993 9.50033 28.4993Z"
-                                            fill="#BBA664" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_29_40477">
-                                            <rect width="38" height="38" fill="white" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                                <span class="text-main text-[12px]"> Upload File </span>
-                                <span class="text-[#8F9BBA] text-[10px]"> PNG, JPG and GIF files are allowed </span>
-                                <input type="file" id="file-input1" class="hidden">
-                            </label>
+                            <div class="input flex flex-col gap-2">
+                                <label for="" class="font-bold mb-2"> التاريخ<span class="text-main"> *
+                                    </span></label>
+                                <v-text-field :dir="locale == 'ar' ? 'rtl' : 'ltr'" label="" class=""
+                                    variant="solo-filled"></v-text-field>
+                            </div>
+                            <div class="input flex flex-col gap-2">
+                                <label for="" class="font-bold mb-2"> الركاب <span class="text-main"> *
+                                    </span></label>
+                                <v-text-field :dir="locale == 'ar' ? 'rtl' : 'ltr'" label="" class=""
+                                    variant="solo-filled"></v-text-field>
+                            </div>
                         </div>
+                      
 
 
                     </div>
 
                 </div>
-                <div class="main-form w-[70%] p-5 bg-white mt-10">
-                    <h1 class="text-[#1A202C] text-[22px] mb-6 font-bold"> خدمات اضافية (لحجوزات المطار) </h1>
-                    <div class="flex items-center justify-cente gap-10">
-                        <p class="w-[300px]"> خدمة الاستقبال من بوابة الخروج من المطار </p>
-                        <v-checkbox color="#BBA664" class=" !w-[fit-content] mt-5"></v-checkbox>
-                        <h4>مجانا</h4>
-                    </div>
-                    <div class="flex items-center justify-cente gap-10">
-                        <p class="w-[300px]"> الاستقبال من داخل المطار
-                            (للترحيب باسمك بلوحه ف المطار مع المساعده) </p>
-                        <v-checkbox color="#BBA664" class=" !w-[fit-content] mt-5"></v-checkbox>
-                        <h4> 100 ريال </h4>
-                    </div>
-
-                    <h3 class="text-[#010101] font-bold mb-4"> ملاحظات </h3>
-
-                    <v-textarea label="" :dir="locale == 'ar' ? 'rtl' : 'ltr'" style="resize: none;"
-                        variant="solo-filled"></v-textarea>
-
-
-                </div>
-
-
+    
             </div>
             <div class="flex items-center justify-center">
 

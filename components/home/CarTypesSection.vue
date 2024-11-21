@@ -10,7 +10,7 @@
         </p>
       </div>
       <div class="">
-        <v-sheet
+        <!-- <v-sheet
           class="mx-auto bg-transparent d-flex justify-center"
           max-width="60%"
         >
@@ -84,7 +84,7 @@
               </swiper-slide>
             </div>
           </swiper>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -107,15 +107,15 @@ const props = defineProps({
   data: Object, // Define the prop 'data' as an object
 });
 
-const categories_data = props.data.data.Categories;
+// const categories_data = props.data.data.Categories;
 
 // Data
 const selectedCategoryIndex = ref(0);
 
 // Computed Property for Selected Cars
-const selectedCars = computed(() => {
-  return categories_data[selectedCategoryIndex.value]?.cars || [];
-});
+// const selectedCars = computed(() => {
+//   return categories_data[selectedCategoryIndex.value]?.cars || [];
+// });
 
 // Method to select category
 const selectCategory = (index) => {
