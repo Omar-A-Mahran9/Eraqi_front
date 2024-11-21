@@ -10,31 +10,33 @@
         </p>
       </div>
       <div class="">
-        <v-sheet
-          class="mx-auto bg-transparent d-flex justify-center"
-          max-width="60%"
-        >
-          <v-slide-group>
-            <v-slide-group-item
-              v-for="(category, index) in categories_data"
-              :key="category.id"
-              v-slot="{ isSelected, toggle }"
-            >
-              <v-btn
-                :style="{
-                  backgroundColor:
-                    selectedCategory === index ? '#bba664' : 'transparent',
-                  color: selectedCategory === index ? 'white' : 'inherit', // Set text color based on selection
-                }"
-                class="ma-3"
-                @click="selectCategory(index)"
-                flat
+        <div>
+          <v-sheet
+            class="mx-auto bg-transparent d-flex justify-center"
+            max-width="60%"
+          >
+            <v-slide-group>
+              <v-slide-group-item
+                v-for="(category, index) in categories_data"
+                :key="category.id"
+                v-slot="{ isSelected, toggle }"
               >
-                <p class="font-bold">{{ category.name }}</p>
-              </v-btn>
-            </v-slide-group-item>
-          </v-slide-group>
-        </v-sheet>
+                <v-btn
+                  :style="{
+                    backgroundColor:
+                      selectedCategory === index ? '#bba664' : 'transparent',
+                    color: selectedCategory === index ? 'white' : 'inherit', // Set text color based on selection
+                  }"
+                  class="ma-3"
+                  @click="selectCategory(index)"
+                  flat
+                >
+                  <p class="font-bold">{{ category.name }}</p>
+                </v-btn>
+              </v-slide-group-item>
+            </v-slide-group>
+          </v-sheet>
+        </div>
 
         <div>
           <swiper

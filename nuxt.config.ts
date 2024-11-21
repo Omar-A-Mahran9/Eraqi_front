@@ -28,12 +28,14 @@ export default defineNuxtConfig({
 
   modules: [
     (_options, nuxt) => {
-    nuxt.hooks.hook("vite:extendConfig", (config) => {
-      // @ts-expect-error is probably not needed here
-      config.plugins.push(vuetify({ autoImport: true }));
-    });
-  },
-  "@nuxtjs/i18n", "@nuxtjs/tailwindcss"],
+      nuxt.hooks.hook("vite:extendConfig", (config) => {
+        // @ts-expect-error is probably not needed here
+        config.plugins.push(vuetify({ autoImport: true }));
+      });
+    },
+    "@nuxtjs/i18n",
+    "@nuxtjs/tailwindcss",
+  ],
 
   // vite: {
   //   vue: {
