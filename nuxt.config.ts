@@ -3,7 +3,7 @@ import vuetify, { transformAssetUrls } from "vite-plugin-vuetify";
 export default defineNuxtConfig({
   runtimeConfig: {
     public: {
-      apiBase: "https://admin.alraqi.sa/api/", // Public base URL
+      apiBase: "http://127.0.0.1:8000/api/", // Public base URL
     },
   },
   css: [

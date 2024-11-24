@@ -82,7 +82,7 @@
                           <v-select
                             :label="$t('From')"
                             density="compact"
-                              :items="[
+                            :items="[
                               'مطار جدة',
                               'جدة',
                               'المدينة',
@@ -104,7 +104,7 @@
                           <v-select
                             :label="$t('To')"
                             density="compact"
-                              :items="[
+                            :items="[
                               'مطار جدة',
                               'جدة',
                               'المدينة',
@@ -139,7 +139,7 @@
                           <v-select
                             :label="$t('Time')"
                             density="compact"
-                              :items="[
+                            :items="[
                               'مطار جدة',
                               'جدة',
                               'المدينة',
@@ -271,7 +271,7 @@
                           <v-select
                             :label="$t('From')"
                             density="compact"
-                              :items="[
+                            :items="[
                               'مطار جدة',
                               'جدة',
                               'المدينة',
@@ -293,7 +293,7 @@
                           <v-select
                             :label="$t('To')"
                             density="compact"
-                              :items="[
+                            :items="[
                               'مطار جدة',
                               'جدة',
                               'المدينة',

@@ -38,55 +38,48 @@
           </v-sheet>
         </div>
 
-        <div>
-          <!-- :initial-slide="Math.floor(selectedCars.length / 2)" -->
-          <swiper
-            :breakpoints="{
-              640: { slidesPerView: 1 },
-              960: { slidesPerView: 3 },
-            }"
-            :pagination="{
-              dynamicBullets: true,
-              clickable: true,
-            }"
-            :navigation="{
-              nextEl: '.swiper-button-next-cars',
-              prevEl: '.swiper-button-prev-cars',
-            }"
-            :modules="[Pagination, Navigation]"
-            :space-between="20"
-          >
-            <div class="d-flex justify-center">
-              <swiper-slide v-for="(car, index) in selectedCars" :key="index">
-                <v-card
-                  class="mx-auto no-border my-6 no-shadow bg-transparent"
-                  max-width="352"
-                  flat
-                >
-                  <v-img
-                    class="bg-white"
-                    :src="car.image[0]"
-                    contain
-                    cover
-                    style="
-                      max-width: 352px;
-                      max-height: 202px;
-                      width: 100%;
-                      height: 100%;
-                      object-fit: cover;
-                    "
-                  ></v-img>
+        <!-- :initial-slide="Math.floor(selectedCars.length / 2)" -->
+        <swiper
+          :breakpoints="{
+            640: { slidesPerView: 1 },
+            960: { slidesPerView: 3 },
+          }"
+          :pagination="{
+            dynamicBullets: true,
+            clickable: true,
+          }"
+          :navigation="{
+            nextEl: '.swiper-button-next-cars',
+            prevEl: '.swiper-button-prev-cars',
+          }"
+          :modules="[Pagination, Navigation]"
+          :space-between="20"
+        >
+          <swiper-slide v-for="(car, index) in selectedCars" :key="index">
+            <v-card
+              class="mx-auto no-border my-6 no-shadow bg-transparent"
+              flat
+              style="
+                height: 300px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+              "
+            >
+              <v-img
+                class="bg-white"
+                :src="car.image[0]"
+                contain
+                cover
+                style="flex-grow: 1; max-height: 70%; object-fit: cover"
+              ></v-img>
 
-                  <v-card-item>
-                    <v-card-title class="text-center">{{
-                      car.name
-                    }}</v-card-title>
-                  </v-card-item>
-                </v-card>
-              </swiper-slide>
-            </div>
-          </swiper>
-        </div>
+              <v-card-item style="flex-shrink: 0; text-align: center">
+                <v-card-title class="text-center">{{ car.name }}</v-card-title>
+              </v-card-item>
+            </v-card>
+          </swiper-slide>
+        </swiper>
       </div>
     </div>
   </div>
@@ -109,74 +102,74 @@ const props = defineProps({
   data: Object, // Define the prop 'data' as an object
 });
 
-// const categories_data = props.data.data.Categories;
+const categories_data = props.data.data.Categories;
 
 // Data
 const selectedCategoryIndex = ref(0);
 
 // Computed Property for Selected Cars
-// const selectedCars = computed(() => {
-//   return categories_data[selectedCategoryIndex.value]?.cars || [];
-// });
+const selectedCars = computed(() => {
+  return categories_data[selectedCategoryIndex.value]?.cars || [];
+});
 
 // Method to select category
 const selectCategory = (index) => {
   selectedCategoryIndex.value = index;
 };
 
-const cat = [
-  {
-    ar: "سيارة اقتصادية",
-    en: "Economical Car",
-  },
-  {
-    ar: "سيارة عائلية",
-    en: "Family Car",
-  },
-  {
-    ar: "سيارة VIP",
-    en: "VIP Car",
-  },
-  {
-    ar: "فئة رجال الأعمال",
-    en: "Business Class",
-  },
-  {
-    ar: "المشازير الخاصة",
-    en: "Private Transfers",
-  },
-];
+// const cat = [
+//   {
+//     ar: "سيارة اقتصادية",
+//     en: "Economical Car",
+//   },
+//   {
+//     ar: "سيارة عائلية",
+//     en: "Family Car",
+//   },
+//   {
+//     ar: "سيارة VIP",
+//     en: "VIP Car",
+//   },
+//   {
+//     ar: "فئة رجال الأعمال",
+//     en: "Business Class",
+//   },
+//   {
+//     ar: "المشازير الخاصة",
+//     en: "Private Transfers",
+//   },
+// ];
 
-const cars = [
-  {
-    img: "img/index/car1.svg",
-    title: {
-      ar: "فورد تورس 2024",
-      en: "Ford Taurus 2024",
-    },
-  },
-  {
-    img: "img/index/car2.svg",
-    title: {
-      ar: "كامري",
-      en: "Camry",
-    },
-  },
-  {
-    img: "img/index/car1.svg",
-    title: {
-      ar: "فورد تورس 2024",
-      en: "Ford Taurus 2024",
-    },
-  },
-  {
-    img: "img/index/car3.svg",
-    title: {
-      ar: "لكزس ES",
-      en: "Lexus ES",
-    },
-  },
-];
+// const cars = [
+//   {
+//     img: "img/index/car1.svg",
+//     title: {
+//       ar: "فورد تورس 2024",
+//       en: "Ford Taurus 2024",
+//     },
+//   },
+//   {
+//     img: "img/index/car2.svg",
+//     title: {
+//       ar: "كامري",
+//       en: "Camry",
+//     },
+//   },
+//   {
+//     img: "img/index/car1.svg",
+//     title: {
+//       ar: "فورد تورس 2024",
+//       en: "Ford Taurus 2024",
+//     },
+//   },
+//   {
+//     img: "img/index/car3.svg",
+//     title: {
+//       ar: "لكزس ES",
+//       en: "Lexus ES",
+//     },
+//   },
+// ];
 
 const onSlideChange = () => {
   console.log("slide change");
