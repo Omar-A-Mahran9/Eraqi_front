@@ -17,19 +17,22 @@
 
                 <p style="color: gray; font-size: 15px">
                     {{ $t("massege send to whatsapp number") }}
-                    <span>0577738783884</span>
+                    <span> {{ store.formRegister.phone }} </span>
                     <NuxtLink to="/auth/register" class="text-main">{{
                         $t("Edit")
                     }}</NuxtLink>
                 </p>
             </div>
             <v-otp-input
+               v-if="store.otpNum"
                 variant="solo"
-                :length="4"
+                :length="6"
+                v-model="store.otpNum"
                 :type="'number'"
                 class="mb-10"
             ></v-otp-input>
             <v-btn
+            @click="registerFunc()"
                 class="mb-1"
                 size="x-large"
                 block
@@ -55,4 +58,9 @@
 </template>
 <script setup>
 const isFocused = false;
+import {useAuthStore} from '@/stores/auth';
+const store = useAuthStore();
+const registerFunc = ()=>{
+    store.checkOtp();
+}
 </script>

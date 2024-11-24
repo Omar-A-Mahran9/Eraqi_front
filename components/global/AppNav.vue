@@ -38,19 +38,20 @@
                 <nuxt-link to="#contact_us" class="text-sm font-semibold leading-6 text-gray-900">{{ $t("Contact us")
                     }}</nuxt-link>
             </PopoverGroup>
+           
             <div class="hidden lg:flex lg:flex-1 lg:justify-end align-middle">
-                <nuxt-link v-if="!token" to="/auth/login">
+                <nuxt-link v-if="!store.isLoggedIn" to="/auth/login">
                     <v-btn class="!bg-main text-white !font-bold mx-10">
                         {{ $t("Sign in") }}
                     </v-btn></nuxt-link>
 
-
-                <v-menu v-if="token">
+                 
+                <v-menu v-if="store.isLoggedIn">
                     <template v-slot:activator="{ props }">
                         <button color="primary" v-bind="props">
                             <div class="mx-5 flex items-center gap-3">
-                                <span class="font-bold "> محمد ابراهيم </span>
-                                <v-avatar image="/img/index/car2.svg" size="60"></v-avatar>
+                                <span class="font-bold ">  {{ store.user?.first_name }} {{  store.user?.last_name }}</span>
+                                <v-avatar v-if="store.user?.image" :image="store.user?.image" size="60"></v-avatar>
                             </div>
                         </button>
                     </template>
@@ -227,6 +228,8 @@
 </template>
 
 <script setup>
+import {useAuthStore} from '@/stores/auth';
+const store = useAuthStore();
 import { ref } from "vue";
 import { useI18n } from "vue-i18n"; // Ensure to import this from vue-i18n
 import {
@@ -278,8 +281,8 @@ let token = computed(()=>{
 const logout = ()=>{
     localStorage.clear("token");
     localStorage.clear("user");
-    token.value = false;
-    window.location.reload();
+    store.token = null;
+    store.user = null;
 }
 // watch(()=>  , (val)=>{
 //     if(val){

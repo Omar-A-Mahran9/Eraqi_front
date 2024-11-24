@@ -3,7 +3,7 @@ import vuetify, { transformAssetUrls } from "vite-plugin-vuetify";
 export default defineNuxtConfig({
   runtimeConfig: {
     public: {
-      apiBase: "http://127.0.0.1:8000/api/", // Public base URL
+      apiBase: "https://admin.alraqi.sa/api/", // Public base URL
     },
   },
   css: [
@@ -26,6 +26,7 @@ export default defineNuxtConfig({
 
   plugins: [
     "~/plugins/sweetalert2.ts", // Ensure the path is correct
+    '~/plugins/auth.client'
   ],
 
   modules: [
@@ -35,7 +36,7 @@ export default defineNuxtConfig({
       config.plugins.push(vuetify({ autoImport: true }));
     });
   },
-  "@nuxtjs/i18n", "@nuxtjs/tailwindcss", "@vueuse/nuxt"],
+  "@nuxtjs/i18n", "@nuxtjs/tailwindcss", "@vueuse/nuxt" , "@pinia/nuxt"],
 
   // vite: {
   //   vue: {

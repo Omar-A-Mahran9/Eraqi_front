@@ -23,6 +23,7 @@
                 class="mb-4"
                 :placeholder="$t('Full name')"
                 variant="solo"
+                v-model="store.formRegister.full_name"
                 style="border-radius: 25px"
             >
                 <template v-slot:prepend-inner>
@@ -52,10 +53,13 @@
                     </svg>
                 </template>
             </v-text-field>
+            <div v-if="store.errorsRegister?.full_name" class="mb-3 text-[tomato]">{{ store.errorsRegister?.full_name[0] }}</div>
+            
             <v-text-field
                 class="mb-4"
                 :placeholder="$t('Whatsapp phone')"
                 variant="solo"
+                v-model="store.formRegister.phone"
                 style="border-radius: 25px"
             >
                 <template v-slot:append>
@@ -70,10 +74,13 @@
                     </v-select>
                 </template>
             </v-text-field>
+            <div v-if="store.errorsRegister?.phone" class="mb-3 text-[tomato]">{{ store.errorsRegister?.phone[0] }}</div>
+
             <v-text-field
                 class="mb-4"
                 :placeholder="$t('Email address')"
                 variant="solo"
+                v-model="store.formRegister.email"
                 style="border-radius: 25px"
             >
                 <template v-slot:prepend-inner>
@@ -103,7 +110,10 @@
                     </svg>
                 </template>
             </v-text-field>
+            <div v-if="store.errorsRegister?.email" class="mb-3 text-[tomato]">{{ store.errorsRegister?.email[0] }}</div>
+
             <v-text-field
+                v-model="store.formRegister.password"
                 :append-inner-icon="visible ? 'mdi-eye-off' : 'mdi-eye'"
                 :type="visible ? 'text' : 'password'"
                 :placeholder="$t('Enter your password')"
@@ -143,8 +153,10 @@
                         />
                     </svg> </template
             ></v-text-field>
+            <div v-if="store.errorsRegister?.password" class="mb-3 text-[tomato]">{{ store.errorsRegister?.password[0] }}</div>
 
             <v-btn
+            @click="registerFunc()"
                 class="mb-1 mt-10"
                 size="x-large"
                 block
@@ -162,17 +174,22 @@
                     {{ $t("Have account") }}
                 </p>
 
-                <a
+                <NuxtLink
                     class="text-main text-decoration-none"
-                    href="/auth/login"
+                    to="/auth/login"
                     rel="noopener noreferrer"
                 >
                     {{ $t("Sign in") }}
-                </a>
+                </NuxtLink>
             </v-card-text>
         </v-card>
     </div>
 </template>
 <script setup>
 const isFocused = false;
+import {useAuthStore} from '@/stores/auth';
+const store = useAuthStore();
+const registerFunc = ()=>{
+    store.register();
+}
 </script>
